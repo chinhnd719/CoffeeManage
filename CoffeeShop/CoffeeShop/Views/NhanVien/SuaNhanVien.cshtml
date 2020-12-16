@@ -1,0 +1,56 @@
+﻿
+@model CoffeeShop.Models.NhanVienView;
+<!--để nó hiểu những biến trong viewmodel-->
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; //dùng lại layout ở share }
+  
+    }
+<br />
+<div class="col-md-10" style="margin-left: 8%">
+    <!-- general form elements -->
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title"> Sửa Nhân Viên</h3>
+        </div>
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form  asp-controller="NhanVien" asp-action="SuaNhanVienData">
+            @*đường dẫn đến admin/ chạy quanlíanphamcontroler/ chạy hàm them sản phẩm*@
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Mã nhân viên</label>
+                    <input asp-for="nhanvienDTO.MaNV" value="@ViewBag.SuaNhanVien.MaNV" readonly="readonly" class="form-control" id="exampleInputEmail1" placeholder="Nhập mã NV">
+
+                    <span class="focus-input100 text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Tên nhân viên</label>
+                    <input asp-for="nhanvienDTO.TenNV" value="@ViewBag.SuaNhanVien.TenNV" class="form-control" id="exampleInputPassword1" placeholder="Nhập tên NV">@*asp-for định danh cho cái input, value là lấy dữ liệu để bên sửa có dữ liệu*@
+                    <span class="focus-input100 text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Họ nhân viên</label>
+                    <input asp-for="nhanvienDTO.HoNV" value="@ViewBag.SuaNhanVien.HoNV" class="form-control" id="exampleInputPassword1" placeholder="Nhập họ NV">@*asp-for định danh cho cái input, value là lấy dữ liệu để bên sửa có dữ liệu*@
+                    <span class="focus-input100 text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">SĐT</label>
+                    <input asp-for="nhanvienDTO.SDT" value="@ViewBag.SuaNhanVien.SDT" class="form-control" id="exampleInputPassword1" placeholder="Nhập SDT">@*asp-for định danh cho cái input, value là lấy dữ liệu để bên sửa có dữ liệu*@
+                    <span class="focus-input100 text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Giới Tính</label>
+                    <input asp-for="nhanvienDTO.GioiTinh" value="@ViewBag.SuaNhanVien.GioiTinh" class="form-control" id="exampleInputPassword1" placeholder="Nhập giới tính">@*asp-for định danh cho cái input, value là lấy dữ liệu để bên sửa có dữ liệu*@
+                    <span class="focus-input100 text-danger"></span>
+                </div>
+                <!--Combobox-->
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Cập nhật</button>
+            </div>
+        </form>
+    </div>
+    <!-- /.card -->
+
+</div>
+

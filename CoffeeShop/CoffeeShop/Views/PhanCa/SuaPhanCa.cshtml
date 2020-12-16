@@ -1,0 +1,47 @@
+﻿
+@model CoffeeShop.Models.PhanCaView;
+<!--để nó hiểu những biến trong viewmodel-->
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; //dùng lại layout ở share }
+  
+    }
+<br />
+<div class="col-md-10" style="margin-left: 8%">
+    <!-- general form elements -->
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title"> Sửa Phân Ca</h3>
+        </div>
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form  asp-controller="PhanCa" asp-action="SuaPhanCaData">
+            @*đường dẫn đến admin/ chạy quanlíanphamcontroler/ chạy hàm them sản phẩm*@
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Mã NV</label>
+                    <input asp-for="phancaDTO.MaNV" value="@ViewBag.SuaPhanCa.MaNV" readonly="readonly" class="form-control" id="exampleInputEmail1" placeholder="Nhập mã NV">
+
+                    <span class="focus-input100 text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Hệ Số Lương</label>
+                    <input asp-for="phancaDTO.HeSoLuong" value="@ViewBag.SuaPhanCa.HeSoLuong" class="form-control" id="exampleInputPassword1" placeholder="Nhập hệ số lương">@*asp-for định danh cho cái input, value là lấy dữ liệu để bên sửa có dữ liệu*@
+                    <span class="focus-input100 text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Số Giờ</label>
+                    <input asp-for="phancaDTO.SoGio" value="@ViewBag.SuaPhanCa.SoGio" class="form-control" id="exampleInputPassword1" placeholder="Nhập số giờ">@*asp-for định danh cho cái input, value là lấy dữ liệu để bên sửa có dữ liệu*@
+                    <span class="focus-input100 text-danger"></span>
+                </div>
+               
+                <!--Combobox-->
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Cập nhật</button>
+            </div>
+        </form>
+    </div>
+    <!-- /.card -->
+
+</div>
+

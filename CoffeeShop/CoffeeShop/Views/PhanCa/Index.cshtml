@@ -1,0 +1,96 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model CoffeeShop.Models.PhanCaView; 
+<!--để nó hiểu những biến trong viewmodel-->
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml"; //dùng lại layout ở share
+
+}
+<br>
+<td>
+    <a class="btn btn-block btn-warning" asp-controller="PhanCa" asp-action="ThemPhanCa"
+       style="background-color: #4e73df; width: 10%; margin-left: 2%; border: 1px solid #4e73df;">Tạo Mới</a>
+</td>
+<br>
+<!-- end search  -->
+<!--begin table-->
+<table class="table table-striped" style=" width: 96%; margin-left: 2%; border: 1px solid #dee2e6;">
+    <thead>
+        <tr>
+            <th scope="col">Mã NV</th>
+            <th scope="col">Hệ Số Lương</th>
+            <th scope="col">Số Giờ</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.PhanCa != null) 
+        {
+            @foreach (var item in Model.PhanCa)//tạo vòng lặp để duyệt từng phần tử trong viewbag để show ra
+            {
+
+        <tr>
+            <td>@item.MaNV</td>
+            <td>@item.HeSoLuong</td>
+            <td>@item.SoGio</td>
+            <td>
+               
+            </td>
+            <td>
+                <button id="xoaPhanCa" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-block btn-danger" data-id="@item.Id">Xóa</button>
+        </tr>
+
+            }
+        }
+
+    </tbody>
+
+</table>
+
+@{
+    @* setup nút quay về , trỏ vào hàm HasPreviousPage ở PaginatedList để kiểm tra *@
+    var prevDisabled = !Model.PhanCa.HasPreviousPage ? "disabled" : "";
+    @* setup nút tiến tới , trỏ vào hàm HasNextPage ở PaginatedList để kiểm tra *@
+    var nextDisabled = !Model.PhanCa.HasNextPage ? "disabled" : "";
+}
+@* Tạo nút quay về, nút này trỏ trực tiếp về Index và truyền parameter pageIndex *@
+<a  class="btn btn-default @prevDisabled"
+    asp-route-pageIndex="@(Model.PhanCa.PageIndex -1)">Previous</a>
+@* Tạo nút tiến lên, nút này trỏ trực tiếp về Index và truyền parameter pageIndex *@
+<a  class="btn btn-default @nextDisabled"
+    asp-route-pageIndex="@(Model.PhanCa.PageIndex +1)">Next</a>
+
+<!--Thẻ show lên xác nhận xóa hay không-->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Thông báo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Bạn có chắc chắn muốn xóa?
+            </div>
+            <div class="modal-footer" id="footer-del">
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!--Kết thúc thẻ xác nhận không có gì đặc biệt-->
+<!--end table-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $("button#xoaPhanCa").click(function ()//tạo sự kiên click cho cái button ở trên theo cú pháp của jquery: "tenthe#mã thẻ"
+    {
+        var id = $(this).data("id");//gán ID đã được lưu vào data-id ở trên để gán vào biến id
+        var obj = '<a class="btn btn-success" href="https://localhost:44359/PhanCa/XoaPhanCaData/' + id + '">Có</a>'
+            + '<button type="button" class="btn btn-secondary" data-dismiss="modal">Không</button>';
+        $("div#footer-del").html(obj);//gọi cái thẻ div có mã là footer-del để chèn phần html zo
+    });
+</script>

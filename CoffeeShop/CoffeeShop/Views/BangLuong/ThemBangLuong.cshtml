@@ -1,0 +1,53 @@
+﻿@model CoffeeShop.Models.BangLuongView;
+<!--để nó hiểu những biến trong viewmodel-->
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; //dùng lại layout ở share }
+
+}
+<br />
+<div class="col-md-10" style="margin-left: 8%">
+    @if (ViewBag.Success != null)
+    {
+<span class="text-success">@ViewBag.Success</span>}
+    <!-- general form elements -->
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">Thêm Bảng Lương</h3>
+        </div>
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form  asp-controller="BangLuong" asp-action="ThemBangLuongData">
+            @*đường dẫn đến admin/ chạy quanlíanphamcontroler/ chạy hàm them sản phẩm*@
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Mã NV</label>
+                    <input asp-for="bangluongDTO.MaNV" class="form-control" id="exampleInputEmail1" placeholder="Nhập mã món">
+                    <span class="focus-input100 text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Tiền Thưởng</label>
+                    <input asp-for="bangluongDTO.TienThuong" class="form-control" id="exampleInputPassword1" placeholder="Nhập tiền thưởng">@*asp-for định danh cho cái input*@
+                    <span class="focus-input100 text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Tạm Ứng</label>
+                    <input asp-for="bangluongDTO.TamUng" class="form-control" id="exampleInputPassword1" placeholder="Nhập tạm ứng">@*asp-for định danh cho cái input*@
+                    <span class="focus-input100 text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Lương</label>
+                    <input asp-for="bangluongDTO.Luong" class="form-control" id="exampleInputPassword1" placeholder="Nhập lương">@*asp-for định danh cho cái input*@
+                    <span class="focus-input100 text-danger"></span>
+                </div>
+              
+                <!--Combobox-->
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+                <button data-toggle="modal" data-target="#exampleModal" type="submit" class="btn btn-primary">Thêm</button>
+            </div>
+        </form>
+
+    </div>
+    <!-- /.card -->
+
+</div>

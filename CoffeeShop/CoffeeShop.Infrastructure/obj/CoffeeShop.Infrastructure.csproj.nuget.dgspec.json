@@ -1,0 +1,148 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\DoAnCNPM\\CoffeeShop\\CoffeeShop.Infrastructure\\CoffeeShop.Infrastructure.csproj": {}
+  },
+  "projects": {
+    "E:\\DoAnCNPM\\CoffeeShop\\CoffeeShop.Domain\\CoffeeShop.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\DoAnCNPM\\CoffeeShop\\CoffeeShop.Domain\\CoffeeShop.Domain.csproj",
+        "projectName": "CoffeeShop.Domain",
+        "projectPath": "E:\\DoAnCNPM\\CoffeeShop\\CoffeeShop.Domain\\CoffeeShop.Domain.csproj",
+        "packagesPath": "C:\\Users\\CHINH\\.nuget\\packages\\",
+        "outputPath": "E:\\DoAnCNPM\\CoffeeShop\\CoffeeShop.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "F:\\DevExpress\\Components\\Offline Packages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\CHINH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "F:\\DevExpress\\Components\\System\\Components\\Packages": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\DoAnCNPM\\CoffeeShop\\CoffeeShop.Infrastructure\\CoffeeShop.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\DoAnCNPM\\CoffeeShop\\CoffeeShop.Infrastructure\\CoffeeShop.Infrastructure.csproj",
+        "projectName": "CoffeeShop.Infrastructure",
+        "projectPath": "E:\\DoAnCNPM\\CoffeeShop\\CoffeeShop.Infrastructure\\CoffeeShop.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\CHINH\\.nuget\\packages\\",
+        "outputPath": "E:\\DoAnCNPM\\CoffeeShop\\CoffeeShop.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "F:\\DevExpress\\Components\\Offline Packages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\CHINH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "F:\\DevExpress\\Components\\System\\Components\\Packages": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "E:\\DoAnCNPM\\CoffeeShop\\CoffeeShop.Domain\\CoffeeShop.Domain.csproj": {
+                "projectPath": "E:\\DoAnCNPM\\CoffeeShop\\CoffeeShop.Domain\\CoffeeShop.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

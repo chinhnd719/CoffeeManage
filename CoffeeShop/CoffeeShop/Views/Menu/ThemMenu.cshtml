@@ -1,0 +1,53 @@
+﻿@model CoffeeShop.Models.MenuView;
+<!--để nó hiểu những biến trong viewmodel-->
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; //dùng lại layout ở share }
+
+}
+<br />
+<div class="col-md-10" style="margin-left: 8%">
+    @if (ViewBag.Success != null)
+    {
+<span class="text-success">@ViewBag.Success</span>}
+    <!-- general form elements -->
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">Thêm menu</h3>
+        </div>
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form  asp-controller="Menu" asp-action="ThemMenuData">
+            @*đường dẫn đến admin/ chạy quanlíanphamcontroler/ chạy hàm them sản phẩm*@
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Mã Món</label>
+                    <input asp-for="menuDTO.MaMon" class="form-control" id="exampleInputEmail1" placeholder="Nhập mã món">
+                    <span class="focus-input100 text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Tên Món</label>
+                    <input asp-for="menuDTO.TenMon" class="form-control" id="exampleInputPassword1" placeholder="Nhập tên món">@*asp-for định danh cho cái input*@
+                    <span class="focus-input100 text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Đơn Giá</label>
+                    <input asp-for="menuDTO.DonGia" class="form-control" id="exampleInputPassword1" placeholder="Nhập đơn giá">@*asp-for định danh cho cái input*@
+                    <span class="focus-input100 text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Số Lượng Tồn</label>
+                    <input asp-for="menuDTO.SoLuongTon" class="form-control" id="exampleInputPassword1" placeholder="Nhập số lượng tồn">@*asp-for định danh cho cái input*@
+                    <span class="focus-input100 text-danger"></span>
+                </div>
+              
+                <!--Combobox-->
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+                <button data-toggle="modal" data-target="#exampleModal" type="submit" class="btn btn-primary">Thêm</button>
+            </div>
+        </form>
+
+    </div>
+    <!-- /.card -->
+
+</div>

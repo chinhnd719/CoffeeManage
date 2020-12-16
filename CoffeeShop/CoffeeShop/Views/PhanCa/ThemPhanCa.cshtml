@@ -1,0 +1,49 @@
+﻿@model CoffeeShop.Models.PhanCaView;
+<!--để nó hiểu những biến trong viewmodel-->
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; //dùng lại layout ở share }
+
+}
+<br />
+<div class="col-md-10" style="margin-left: 8%">
+    @if (ViewBag.Success != null)
+    {
+<span class="text-success">@ViewBag.Success</span>}
+    <!-- general form elements -->
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">Thêm Phân Ca</h3>
+        </div>
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form  asp-controller="PhanCa" asp-action="ThemPhanCaData">
+            @*đường dẫn đến admin/ chạy quanlíanphamcontroler/ chạy hàm them sản phẩm*@
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Mã NV</label>
+                    <input asp-for="phancaDTO.MaNV" class="form-control" id="exampleInputEmail1" placeholder="Nhập mã NV">
+                    <span class="focus-input100 text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Hệ Số Lương</label>
+                    <input asp-for="phancaDTO.HeSoLuong" class="form-control" id="exampleInputPassword1" placeholder="Nhập hệ số lương">@*asp-for định danh cho cái input*@
+                    <span class="focus-input100 text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Số Giờ</label>
+                    <input asp-for="phancaDTO.SoGio" class="form-control" id="exampleInputPassword1" placeholder="Nhập số giờ">@*asp-for định danh cho cái input*@
+                    <span class="focus-input100 text-danger"></span>
+                </div>
+                
+              
+                <!--Combobox-->
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+                <button data-toggle="modal" data-target="#exampleModal" type="submit" class="btn btn-primary">Thêm</button>
+            </div>
+        </form>
+
+    </div>
+    <!-- /.card -->
+
+</div>
